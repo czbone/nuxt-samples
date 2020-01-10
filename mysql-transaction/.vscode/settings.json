@@ -1,0 +1,14 @@
+{
+  "git.ignoreLimitWarning": true,
+  "files.associations": {
+    "*.vue": "vue"
+  },
+  "eslint.validate": [
+    "javascript",
+    "vue"
+  ],
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
