@@ -30,11 +30,7 @@ exports.validateError = (req, message) => {
   const url = req.protocol + ':/' + req.headers.host + req.baseUrl
   let msg = message + ' url: ' + url + ' '
   if (Object.keys(req.body).length) msg += JSON.stringify(req.body)
-  // if (Object.keys(req.params).length) msg += JSON.stringify(req.params)
   if (Object.keys(req.query).length) msg += JSON.stringify(req.query)
-  // console.log(req.body)
-  // console.log(req.params)
-  // console.log(req.query)
 
   logger.warn('[validate] ' + msg)
 }

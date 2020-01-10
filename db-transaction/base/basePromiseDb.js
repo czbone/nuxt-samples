@@ -6,7 +6,7 @@
  * @author Naoki Hirata
  * @since  1.0.0
  */
-const config = require('config') // サーバ実行環境取得
+const config = require('./config') // サーバ実行環境取得
 
 const mysql = require('mysql2/promise')
 const pool = mysql.createPool({

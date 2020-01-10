@@ -5,8 +5,9 @@
             "type": "node",
             "request": "launch",
             "name": "プログラムの起動",
-            "program": "${workspaceFolder}/app.js",
-            "cwd": "${workspaceFolder}"
+            "program": "${workspaceFolder}/main.js",
+            "cwd": "${workspaceFolder}",
+            "outputCapture": "std"
         }
     ]
 }
