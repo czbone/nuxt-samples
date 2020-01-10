@@ -1,6 +1,6 @@
 {
   "name": "mysql-transaction",
-  "version": "1.0.0",
+  "version": "0.9.0",
   "description": "MySQL transaction sample project",
   "author": "Naoki Hirata",
   "private": true,

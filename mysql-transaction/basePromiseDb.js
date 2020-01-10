@@ -1,12 +1,12 @@
 /**
  * Promise型DBアクセスベースクラス
  *
- * DBからのデータ取得、更新等のDBのアクセスをすべて管理する
+ * DBからのデータ取得、更新を管理する
  *
  * @author Naoki Hirata
  * @since  1.0.0
  */
-const config = require(`${appRoot}/server/env/config`) // サーバ実行環境取得
+const config = require('config') // サーバ実行環境取得
 
 const mysql = require('mysql2/promise')
 const pool = mysql.createPool({
@@ -16,7 +16,7 @@ const pool = mysql.createPool({
   user: config.dbUser,
   password: config.dbPassword,
   connectionLimit: 10, // 接続コネクション数最大(デフォルト)
-  connectTimeout: 60000 // 起動時に接続エラーが出る問題を回避(10秒→60秒) add testing.
+  connectTimeout: 60000
 })
 
 class BasePromiseDb {
