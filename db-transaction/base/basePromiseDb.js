@@ -1,8 +1,6 @@
 /**
  * Promise型DBアクセスベースクラス
  *
- * DBからのデータ取得、更新を管理する
- *
  * @author Naoki Hirata
  * @since  1.0.0
  */
@@ -42,7 +40,6 @@ class BasePromiseDb {
       connection = await this.pool.getConnection()
 
       errCode = 11
-      // const [rows] = await connection.query(query, params)
       const [rows] = await connection.execute(query, params)
 
       // 取得レコードを返す
@@ -175,7 +172,6 @@ class BasePromiseDb {
       connection = await this.pool.getConnection()
 
       errCode = 51
-      //  const [rows] = await connection.query(query, params)
       const [rows] = await connection.execute(query, params)
 
       // 取得レコードを返す
@@ -229,7 +225,6 @@ class BasePromiseDb {
       for (let i = 0; i < statements.length; i++) {
         query = statements[i].query
         param = statements[i].param
-        //  await connection.query(query, param)
         await connection.execute(query, param)
       }
 
