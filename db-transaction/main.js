@@ -11,7 +11,7 @@ const userDb = new UserDb()
   console.log(result3)
   console.log('main...end....')
 
-  const [err2] = await userDb.tranBlockFail1()
+  const [err2] = await userDb.tranBlockToFail1()
   if (err2) throw new Error('トランザクションブロック2でエラー発生')
   console.log(err2)
 

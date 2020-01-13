@@ -1,7 +1,7 @@
 const BaseDb = require('./base/basePromiseDb')
 
 class UserDb extends BaseDb {
-  async getUsers () {
+  getUsers () {
     const sql = 'SELECT * FROM users'
     return this.execQuery(sql)
   }
@@ -22,7 +22,7 @@ class UserDb extends BaseDb {
     return this.execAsyncFunctionWithTran(asyncFunc)
   }
 
-  tranBlockFail1 () {
+  tranBlockToFail1 () {
     console.log('#tranFail1 start...')
 
     const asyncFunc = async (conn) => {
