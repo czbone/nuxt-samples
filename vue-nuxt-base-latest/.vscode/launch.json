@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "compounds": [
+        {
+            "name": "Launch & Debug",
+            "configurations": ["Launch Server", "Launch Chrome"]
+        }
+    ],
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}",
+            "runtimeArgs": [
+                "--remote-debugging-port=9222"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Server",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run-script", "dev"
+            ],
+            "port": 9229,
+            "outputCapture": "std",
+            "timeout": 60000
+        }   
+    ]
+}

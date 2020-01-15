@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "standard",
+    "plugin:vue/essential",
+    "plugin:nuxt/recommended"
+  ],
+  "rules": {
+    "standard/no-callback-literal": 0
+  },
+  "globals": {
+  }
+}
