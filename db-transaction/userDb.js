@@ -35,7 +35,7 @@ class UserDb extends BaseDb {
       const sql = 'INSERT INTO users (account, name) VALUES ?'
       await conn.query(sql, [values])
 
-      // キーを重複データでエラーを発生させる
+      // 重複データでエラーを発生させる
       const values2 = [['taro', '太郎2'], ['hanako', '花子2'], ['jiro', '次郎2']]
       const sql2 = 'INSERT INTO users (account, name) VALUES ?'
       await conn.query(sql2, [values2])
