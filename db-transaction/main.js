@@ -6,29 +6,42 @@ const userDb = new UserDb()
 ;(async () => {
   console.log('#トランザクションブロック1を実行')
   const [err] = await userDb.tranBlock1()
-  if (err) throw new Error('トランザクションブロック1でエラー発生')
-
-  console.log('#DBの内容を表示')
-  const [err2, result2] = await userDb.getUsers()
-  console.log(result2)
-
-  console.log('#トランザクションブロック2を実行')
-  const [err3] = await userDb.tranBlock2ToFail()
-  if (err3) {
-    console.log('#DBの内容を表示')
-    const [err4, result4] = await userDb.getUsers()
-    console.log(result4)
-
-    throw new Error('トランザクションブロック2でエラー発生')
+  if (err) {
+    console.log('=>エラーが発生しました。トランザクションはキャンセルされました。')
+    // throw new Error('トランザクションブロック1でエラー発生') // 異常終了で終わる場合
   }
 
-  // 正常終了(ここには来ない)
+  // テーブルの内容を表示
+  await userDb.outputTable()
+
+  console.log('#トランザクションブロック2を実行')
+  const [err2] = await userDb.tranBlock2ToFail()
+  if (err2) console.log('=>エラーが発生しました。トランザクションはキャンセルされました。')
+
+  // テーブルの内容を表示
+  await userDb.outputTable()
+
+  console.log('#トランザクションブロック3を実行')
+  const [err3] = await userDb.tranBlock3()
+  if (err3) console.log('=>エラーが発生しました。トランザクションはキャンセルされました。')
+
+  // テーブルの内容を表示
+  await userDb.outputTable()
+
+  console.log('#トランザクションブロック4を実行')
+  const [err4] = await userDb.tranBlock4ToFail()
+  if (err4) console.log('=>エラーが発生しました。トランザクションはキャンセルされました。')
+
+  // テーブルの内容を表示
+  await userDb.outputTable()
+
+  // 正常終了
   console.log('#正常終了')
   process.exit(0)
-})().catch((err) => { // reject()実行でこちらに来る
+})().catch((err) => { // 例外を発生させるとこちらに来る
   console.error(err)
 
-  // 異常終了(こちらで終了)
+  // 異常終了
   console.log('#異常終了')
   process.exit(1)
 })

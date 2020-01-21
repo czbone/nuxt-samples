@@ -1,11 +1,21 @@
 const BaseDb = require('./base/basePromiseDb')
 
 class UserDb extends BaseDb {
-  getUsers () {
+  /**
+   * テーブルの内容をデバッグコンソールに出力
+   */
+  async outputTable () {
+    console.log('#テーブルの内容を表示')
     const sql = 'SELECT * FROM users'
-    return this.execQuery(sql)
+    const [err, result] = await this.execQuery(sql)
+    console.log(result)
   }
 
+  /**
+   * トランザクション1(正常パターン)
+   *
+   * テーブルをクリアし、初期レコードを登録。
+   */
   tranBlock1 () {
     const asyncFunc = async (conn) => {
       console.log('#トランザクションブロック1 - 開始')
@@ -23,6 +33,11 @@ class UserDb extends BaseDb {
     return this.execAsyncFunctionWithTran(asyncFunc)
   }
 
+  /**
+   * トランザクション2(異常パターン)
+   *
+   * テーブルをクリアし、初期レコードを登録後、値が重複するレコード登録してエラーを発生させる。
+   */
   tranBlock2ToFail () {
     const asyncFunc = async (conn) => {
       console.log('#トランザクションブロック2 - 開始')
@@ -41,6 +56,49 @@ class UserDb extends BaseDb {
       await conn.query(sql2, [values2])
 
       console.log('#トランザクションブロック2 - 終了')
+    }
+    return this.execAsyncFunctionWithTran(asyncFunc)
+  }
+
+  /**
+   * トランザクション3(正常パターン)
+   *
+   * 登録データの一部を更新。
+   */
+  tranBlock3 () {
+    const asyncFunc = async (conn) => {
+      console.log('#トランザクションブロック3 - 開始')
+
+      const sql = 'SELECT * FROM users WHERE account = ?'
+      const [err, result] = await this.execQuery(sql, ['hanako'])
+      if (err) throw new Error('トランザクションブロック3でエラー発生')
+      const userid = result[0].id
+
+      // データを更新
+      const sql2 = 'UPDATE users SET name = ?  WHERE id = ?'
+      await conn.query(sql2, ['団子', userid])
+
+      console.log('#トランザクションブロック3 - 終了')
+    }
+    return this.execAsyncFunctionWithTran(asyncFunc)
+  }
+
+  /**
+   * トランザクション4(異常パターン)
+   *
+   * テーブルをクリアし、例外を発生させて異常終了させる
+   */
+  tranBlock4ToFail () {
+    const asyncFunc = async (conn) => {
+      console.log('#トランザクションブロック4 - 開始')
+
+      // テーブルクリア
+      await conn.execute('DELETE FROM users')
+
+      // 例外を発生させて異常終了
+      throw new Error('トランザクションブロック4でエラー発生')
+
+      console.log('#トランザクションブロック4 - 終了')
     }
     return this.execAsyncFunctionWithTran(asyncFunc)
   }
