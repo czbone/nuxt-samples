@@ -16,7 +16,7 @@ class UserDb extends BaseDb {
    *
    * テーブルをクリアし、初期レコードを登録。
    */
-  tranBlock1 () {
+  async tranBlock1 () {
     const asyncFunc = async (conn) => {
       console.log('#トランザクションブロック1 - 開始')
 
@@ -38,7 +38,7 @@ class UserDb extends BaseDb {
    *
    * テーブルをクリアし、初期レコードを登録後、値が重複するレコード登録してエラーを発生させる。
    */
-  tranBlock2ToFail () {
+  async tranBlock2ToFail () {
     const asyncFunc = async (conn) => {
       console.log('#トランザクションブロック2 - 開始')
 
@@ -65,7 +65,7 @@ class UserDb extends BaseDb {
    *
    * 登録データの一部を更新。
    */
-  tranBlock3 () {
+  async tranBlock3 () {
     const asyncFunc = async (conn) => {
       console.log('#トランザクションブロック3 - 開始')
 
@@ -88,7 +88,7 @@ class UserDb extends BaseDb {
    *
    * テーブルをクリアし、例外を発生させて異常終了させる
    */
-  tranBlock4ToFail () {
+  async tranBlock4ToFail () {
     const asyncFunc = async (conn) => {
       console.log('#トランザクションブロック4 - 開始')
 
