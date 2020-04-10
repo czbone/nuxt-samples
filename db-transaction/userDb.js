@@ -70,9 +70,8 @@ class UserDb extends BaseDb {
       console.log('#トランザクションブロック3 - 開始')
 
       const sql = 'SELECT * FROM users WHERE account = ?'
-      const [err, result] = await this.execQuery(sql, ['hanako'])
-      if (err) throw new Error('トランザクションブロック3でエラー発生')
-      const userid = result[0].id
+      const [rows, fields] = await conn.execute(sql, ['hanako'])
+      const userid = rows[0].id
 
       // データを更新
       const sql2 = 'UPDATE users SET name = ?  WHERE id = ?'
