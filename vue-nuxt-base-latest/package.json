@@ -11,14 +11,14 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.10.1",
+    "@nuxtjs/axios": "^5.10.2",
     "cross-env": "^7.0.2",
     "nuxt": "^2.12.2",
     "express": "^4.17.1"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
-    "@nuxtjs/vuetify": "^1.11.0",
+    "@nuxtjs/vuetify": "^1.11.2",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.2",
