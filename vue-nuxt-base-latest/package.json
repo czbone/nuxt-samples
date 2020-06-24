@@ -13,13 +13,13 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.11.0",
     "cross-env": "^7.0.2",
-    "nuxt": "^2.12.2",
+    "nuxt": "^2.13.1",
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
+    "@fortawesome/fontawesome-free": "^5.13.1",
     "@nuxtjs/vuetify": "^1.11.2",
-    "eslint": "^7.2.0",
+    "eslint": "^7.3.1",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-node": "^11.1.0",

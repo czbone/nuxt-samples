@@ -1,9 +1,9 @@
 <template>
   <v-app>
     <MainToolbar/>
-    <v-content><!-- next specification ⇒<v-main> -->
+    <v-main>
       <nuxt/>
-    </v-content><!-- next specification ⇒</v-main> -->
+    </v-main>
     <v-footer padless>
     <!--<v-layout justify-center row wrap>
       <v-flex primary lighten-1 py-3 text-center white--text xs12>
