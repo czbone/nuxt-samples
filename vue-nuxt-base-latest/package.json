@@ -17,9 +17,9 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.1",
+    "@fortawesome/fontawesome-free": "^5.14.0",
     "@nuxtjs/vuetify": "^1.11.2",
-    "eslint": "^7.4.0",
+    "eslint": "^7.5.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^11.1.0",
@@ -27,8 +27,6 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-vue": "^6.2.2",
-    "nodemon": "^2.0.4",
-    "stylus": "^0.54.7",
-    "stylus-loader": "^3.0.2"
+    "nodemon": "^2.0.4"
   }
 }

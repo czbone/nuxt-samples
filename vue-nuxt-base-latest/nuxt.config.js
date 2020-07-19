@@ -19,7 +19,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
       // ### change font configuration ###
-      //{ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Nova+Mono' },  // change default vuetify font
+      // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Nova+Mono' },  // change default vuetify font
     ]
   },
 
@@ -32,11 +32,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    // ##### load vuetify css #####
-    //'~/assets/style/app.styl',
-
-     // add icon font
-     '@fortawesome/fontawesome-free/css/all.css'
+    // add icon font
+    '@fortawesome/fontawesome-free/css/all.css'
   ],
 
   /*
@@ -55,7 +52,7 @@ module.exports = {
     }],
     '@nuxtjs/vuetify'
   ],
-  
+
   /*
   ** Build configuration
   */
@@ -63,7 +60,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
+    extend (config, ctx) {
     }
   }
 }
