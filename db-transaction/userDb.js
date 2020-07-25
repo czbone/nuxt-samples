@@ -29,6 +29,9 @@ class UserDb extends BaseDb {
       await conn.query(sql, [values])
 
       console.log('#トランザクションブロック1 - 終了')
+
+      // トランザクションブロックの終了値が必要な場合はreturnで返す
+      return 100
     }
     return this.execAsyncFunctionWithTran(asyncFunc)
   }
