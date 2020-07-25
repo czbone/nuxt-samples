@@ -161,7 +161,7 @@ class BasePromiseDb {
    * @access public
    * @param  {string} query SELECT文
    * @param  {Array} params クエリーに埋め込むパラメータ
-   * @return {Array} 実行結果(エラーありかどうかと結果レコードの配列(エラーの場合はエラーコード)
+   * @return {Array} エラーの有無(numberのエラーコードまたはfalse(エラーなし))と結果レコードの配列
    */
   async execQuery (query, params) {
     let errCode = -1
@@ -204,7 +204,7 @@ class BasePromiseDb {
    * @since  1.0.0
    * @access public
    * @param  {Array} statements クエリー(query)とパラメータ(param)の配列
-   * @return {bool} エラーありかどうか。エラーの場合はエラーコード。
+   * @return {bool} エラーの有無(numberのエラーコードまたはfalse(エラーなし))
    */
   async execQueryWithTran (statements) {
     let errCode = -1 // エラーコード初期化(未定義値)
