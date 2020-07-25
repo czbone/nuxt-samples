@@ -15,6 +15,8 @@ class UserDb extends BaseDb {
    * トランザクション1(正常パターン)
    *
    * テーブルをクリアし、初期レコードを登録。
+   * 
+   * @return {Array} エラーの有無(numberのエラーコードまたはfalse(エラーなし))と同期関数の戻り値(任意)の配列
    */
   async tranBlock1 () {
     const asyncFunc = async (conn) => {
@@ -40,6 +42,8 @@ class UserDb extends BaseDb {
    * トランザクション2(異常パターン)
    *
    * テーブルをクリアし、初期レコードを登録後、値が重複するレコード登録してエラーを発生させる。
+   * 
+   * @return {Array} エラーの有無(numberのエラーコードまたはfalse(エラーなし))と同期関数の戻り値(任意)の配列
    */
   async tranBlock2ToFail () {
     const asyncFunc = async (conn) => {
@@ -67,6 +71,8 @@ class UserDb extends BaseDb {
    * トランザクション3(正常パターン)
    *
    * 登録データの一部を更新。
+   * 
+   * @return {Array} エラーの有無(numberのエラーコードまたはfalse(エラーなし))と同期関数の戻り値(任意)の配列
    */
   async tranBlock3 () {
     const asyncFunc = async (conn) => {
@@ -89,6 +95,8 @@ class UserDb extends BaseDb {
    * トランザクション4(異常パターン)
    *
    * テーブルをクリアし、例外を発生させて異常終了させる
+   * 
+   * @return {Array} エラーの有無(numberのエラーコードまたはfalse(エラーなし))と同期関数の戻り値(任意)の配列
    */
   async tranBlock4ToFail () {
     const asyncFunc = async (conn) => {

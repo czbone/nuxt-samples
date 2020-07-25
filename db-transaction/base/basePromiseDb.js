@@ -267,7 +267,7 @@ class BasePromiseDb {
    * @since  1.0.0
    * @access public
    * @param  {function} asyncFunc 同期関数
-   * @return {bool} エラーありかどうか。エラーの場合はエラーコード。
+   * @return {Array} エラーの有無(numberのエラーコードまたはfalse(エラーなし))と同期関数の戻り値(任意)の配列
    */
   async execAsyncFunctionWithTran (asyncFunc) {
     let errCode = -1 // エラーコード初期化(未定義値)
