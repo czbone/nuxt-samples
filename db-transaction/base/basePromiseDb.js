@@ -29,7 +29,7 @@ class BasePromiseDb {
    * @access public
    * @param  {string} query SELECT文
    * @param  {Array} params クエリーに埋め込むパラメータ
-   * @return {Array} エラーの有無(numberのエラーコードまたはfalse(エラーなし))と結果レコードの配列
+   * @return {Promise.<[boolean, Array]>} Promiseオブジェクト(resultでエラーの有無(numberのエラーコードまたはfalse(エラーなし))と結果レコード配列を配列で返す)
    */
   async execQuery (query, params) {
     let errCode = -1
@@ -72,7 +72,7 @@ class BasePromiseDb {
    * @since  1.0.0
    * @access public
    * @param  {Array} statements クエリー(query)とパラメータ(param)の配列
-   * @return {bool} エラーの有無(numberのエラーコードまたはfalse(エラーなし))
+   * @return {Promise.<boolean>} Promiseオブジェクト(resultでエラーの有無(numberのエラーコードまたはfalse(エラーなし))を返す)
    */
   async execQueryWithTran (statements) {
     let errCode = -1 // エラーコード初期化(未定義値)
@@ -135,7 +135,7 @@ class BasePromiseDb {
    * @since  1.0.0
    * @access public
    * @param  {function} asyncFunc 同期関数
-   * @return {Array} エラーの有無(numberのエラーコードまたはfalse(エラーなし))と同期関数の戻り値(任意)の配列
+   * @return {Promise.<[boolean, any]>} Promiseオブジェクト(resultでエラー有無(numberのエラーコードまたはfalse(エラーなし))と同期関数の戻り値(任意)を配列で返す)
    */
   async execAsyncFunctionWithTran (asyncFunc) {
     let errCode = -1 // エラーコード初期化(未定義値)
