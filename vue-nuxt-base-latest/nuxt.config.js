@@ -3,8 +3,6 @@ const pkg = require('./package')
 const API_URL = '' // サーバAPIの公開URL(proxy使用時)
 
 module.exports = {
-  mode: 'universal',
-
   /*
   ** Headers of the page
   */

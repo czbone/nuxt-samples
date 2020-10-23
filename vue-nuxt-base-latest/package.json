@@ -13,20 +13,20 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.12.2",
     "cross-env": "^7.0.2",
-    "nuxt": "^2.14.6",
+    "nuxt": "^2.14.7",
     "express": "^4.17.1"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@nuxtjs/vuetify": "^1.11.2",
     "eslint": "^7.11.0",
-    "eslint-config-standard": "^14.1.1",
+    "eslint-config-standard": "^15.0.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-nuxt": "^1.0.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "eslint-plugin-vue": "^7.0.1",
-    "nodemon": "^2.0.5"
+    "eslint-plugin-standard": "^4.0.2",
+    "eslint-plugin-vue": "^7.1.0",
+    "nodemon": "^2.0.6"
   }
 }
