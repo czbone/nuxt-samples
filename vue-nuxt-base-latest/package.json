@@ -11,22 +11,22 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.12.2",
-    "cross-env": "^7.0.2",
-    "nuxt": "^2.14.7",
+    "@nuxtjs/axios": "^5.12.4",
+    "cross-env": "^7.0.3",
+    "nuxt": "^2.14.12",
     "express": "^4.17.1"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@nuxtjs/vuetify": "^1.11.2",
-    "eslint": "^7.13.0",
-    "eslint-config-standard": "^16.0.1",
+    "eslint": "^7.16.0",
+    "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.2",
-    "eslint-plugin-vue": "^7.1.0",
+    "eslint-plugin-standard": "^4.1.0",
+    "eslint-plugin-vue": "^7.3.0",
     "nodemon": "^2.0.6"
   }
 }
